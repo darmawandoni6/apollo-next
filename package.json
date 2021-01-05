@@ -1,0 +1,42 @@
+{
+  "name": "apollo-next",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=develop node server.js -p $PORT",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js -p $PORT"
+  },
+  "author": "darmawandoni6",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.4.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "next": "^9.2.2",
+    "next-compose-plugins": "^2.2.0",
+    "next-fonts": "^0.17.0",
+    "next-optimized-images": "^2.5.3",
+    "next-redux-wrapper": "^3.0.0-alpha.3",
+    "next-seo": "^2.0.0",
+    "node-sass": "^4.12.0",
+    "nprogress": "^0.2.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-pro-sidebar": "^0.5.0",
+    "react-redux": "^7.1.0",
+    "react-spinners": "^0.8.1",
+    "redux": "^4.0.4",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-form": "^8.2.6",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "dotenv-webpack": "^1.8.0"
+  }
+}
