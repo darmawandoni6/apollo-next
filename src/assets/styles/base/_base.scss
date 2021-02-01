@@ -1,9 +1,39 @@
-.wrapper {
-  display: flex;
+.vh {
   height: 100vh;
-  &-content {
-    width: 100%;
+}
+
+.vw {
+  width: 100vw;
+}
+
+.rounded-12 {
+  border-radius: 12px;
+}
+
+.text-link {
+  color: $primary;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
   }
-  &-table {
+}
+
+.loading-page {
+  display: none;
+}
+.loading {
+  .loading-page {
+    display: block;
+    position: absolute;
+    height: 100%;
+    background: #00000087;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
   }
 }

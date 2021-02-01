@@ -1,166 +1,65 @@
-@import "~react-pro-sidebar/dist/scss/styles.scss";
-$sidebar-bg-color: red !default;
-$sidebar-color: #adadad !default;
-$sidebar-width: 270px !default;
-$sidebar-collapsed-width: 80px !default;
-$highlight-color: #d8d8d8 !default;
-$submenu-bg-color: #2b2b2b !default;
-$submenu-bg-color-collapsed: #2b2b2b !default;
-$icon-bg-color: #d61717 !default;
-$icon-size: 35px !default;
-$breakpoint-xs: 480px !default;
-$breakpoint-sm: 576px !default;
-$breakpoint-md: 768px !default;
-$breakpoint-lg: 992px !default;
-$breakpoint-xl: 1200px !default;
-
-.sidebar {
-  height: 100%;
+.wrapper {
   display: flex;
+  width: 100vw;
+  height: 100vh;
   position: relative;
-
-  .btn-toggle {
-    cursor: pointer;
-    width: 35px;
-    height: 35px;
-    background: #353535;
-    color: #fff;
-    text-align: center;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    display: none;
+  &-left {
+    background-color: #5b7cfd;
+    height: 100%;
+    width: 303px;
   }
-
-  .sidebar-btn-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .sidebar-btn {
-      padding: 1px 15px;
-      border-radius: 40px;
-      background: rgba(255, 255, 255, 0.05);
-      color: #adadad;
+  &-content {
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 2;
+    background-color: white;
+    animation-delay: 0.85s;
+    animation: scaleUpCenter 0.15s linear both;
+    width: calc(100% - 253px);
+    border-top-left-radius: 40px;
+  }
+  &-table {
+    background: #ffffff;
+    box-shadow: 0px 5px 10px rgba(187, 187, 187, 0.15);
+    border-radius: 8px;
+    margin-top: 1rem;
+    padding: 1.5rem;
+  }
+}
+.logo-dashboard {
+  padding: 1rem 2rem;
+  height: 80px;
+}
+.list-group-nav-left {
+  .list-group-item {
+    padding: 1rem 2rem;
+    background-color: transparent;
+    border: 0;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.25s ease;
+    transform: translateX(0);
+    .dropdown-toggle {
       text-decoration: none;
-      margin: 0 auto;
-      height: 35px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      span {
-        margin-left: 5px;
-        font-size: 13px;
-      }
-      &:hover {
-        color: $highlight-color;
-      }
     }
-  }
-
-  .collapsed {
-    .sidebar-btn {
-      display: inline-block;
-      border-radius: 50%;
-      width: 35px;
-      height: 35px;
-      line-height: 40px;
-      padding: 0;
+    i {
+      width: 12px;
+      margin-right: 1rem;
     }
-  }
-
-  main {
-    padding: 24px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    header {
-      margin-bottom: 40px;
-      border-bottom: 1px solid #efefef;
-      h1 {
-        display: flex;
-        align-items: center;
-        transform: translateX(-20px);
+    &.active {
+      background-color: #5370e0;
+    }
+    [toggler] {
+      ul li.active .nav-link {
+        background-color: $primary !important;
+        color: $white !important;
+        font-weight: $font-weight-bold;
       }
     }
-
-    footer {
-      margin-top: auto;
-      color: #888;
-      text-align: center;
-      a {
-        text-decoration: none;
-        color: #888;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-  .social-bagdes {
-    margin-top: 10px;
-    img {
-      margin: 5px;
-    }
-  }
-
-  .block {
-    display: flex;
-    margin-bottom: 24px;
-    font-size: 14px;
-    color: #545454;
-    > span {
-      margin-left: 10px;
-    }
-  }
-
-  &.rtl {
-    direction: rtl;
-    text-align: right;
-
-    header {
-      h1 {
-        transform: translateX(20px);
-      }
-    }
-    .block {
-      direction: rtl;
-      > span {
-        margin-left: 0;
-        margin-right: 10px;
-      }
-    }
-    .sidebar-btn-wrapper {
-      .sidebar-btn {
-        span {
-          margin-left: 0;
-          margin-right: 5px;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 767.98px) {
-    overflow-x: hidden;
-    header {
-      h1 {
-        font-size: 24px;
-      }
-    }
-  }
-  @media (max-width: $breakpoint-md) {
-    .btn-toggle {
-      display: flex;
-    }
-
-    &.rtl {
-      .btn-toggle {
-        margin-left: auto;
-      }
-    }
+    // &:hover {
+    //     transform: translateX(4px);
+    // }
   }
 }

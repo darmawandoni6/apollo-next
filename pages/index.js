@@ -1,14 +1,13 @@
-import Test from "@containers/Test";
-import AdminLayout from "@layout/AdminLayout";
-import SingleLayout from "@layout/SingleLayout";
 import React from "react";
+import Login from "@containers/auth/Login";
+import SingleLayout from "@layout/SingleLayout";
 
 const Index = () => {
   return (
     <>
-      <AdminLayout>
-        <Test />
-      </AdminLayout>
+      <SingleLayout>
+        <Login />
+      </SingleLayout>
     </>
   );
 };
